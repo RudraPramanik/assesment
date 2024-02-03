@@ -19,13 +19,9 @@ const Drawer = createDrawerNavigator();
 const InsideStack = createNativeStackNavigator();
 
 
-
+//insideLayout is the protected route when user loggedin only can visit it
 function InsideLayout({ setUser, user }) {
-  // const [tasks, setTasks] = useState([]); 
-  // Callback function to update tasks
-  // const updateTasks = (newTasks) => {
-  //   setTasks(newTasks);
-  // };
+
   return (
     <TaskProvider>
     <Drawer.Navigator
