@@ -10,8 +10,8 @@ import Home from "./app/screens/Home";
 import Tasks from "./app/screens/Tasks";
 import Settings from "./app/screens/Setings";
 import { User, onAuthStateChanged } from "firebase/auth";
-import { UserContext } from "./UserContext";
-import { TaskProvider } from "./TaskContext";
+import { UserContext } from "./app/context/UserContext";
+import { TaskProvider } from "./app/context/TaskContext";
 
 
 const Stack = createNativeStackNavigator();
@@ -27,7 +27,7 @@ function InsideLayout({ setUser, user }) {
     <Drawer.Navigator
       initialRouteName="Home"
     >
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={Home}  />
       <Drawer.Screen name="Tasks" component={Tasks} />
       <Drawer.Screen name="Setings" component={Settings} initialParams={{ user }} />
     </Drawer.Navigator>
@@ -47,12 +47,13 @@ export default function App() {
   return (
     <UserContext.Provider value={{ user, setUser}}>
     <NavigationContainer>
+      {/* conditionally render auth route or protected route */}
       <Stack.Navigator initialRouteName="Login">
         {user ? (
           <Stack.Screen
             name="Assesment"
             component={InsideLayout}
-            options={{ headerShown: true }}
+            options={{ headerShown: false }}
           />
         ) : (
           <Stack.Screen

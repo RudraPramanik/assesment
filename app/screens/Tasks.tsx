@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from "react-native";
-import { useTaskContext } from "../../TaskContext";
+import { useTaskContext } from "../context/TaskContext";
 
 const Tasks = () => {
   const { tasks, addTask, deleteTask, completeTask } = useTaskContext();

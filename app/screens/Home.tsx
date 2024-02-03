@@ -1,7 +1,7 @@
 // Home.js
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import { useTaskContext } from "../../TaskContext";
+import { useTaskContext } from "../context/TaskContext";
 
 const Home = () => {
   const { tasks } = useTaskContext();
