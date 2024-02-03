@@ -9,6 +9,9 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Task List</Text>
+      {
+        tasks.length === 0 && (<><Text style={styles.notask} >no task found</Text></>)
+      }
       <FlatList
         data={tasks}
         keyExtractor={(item) => item.id.toString()}
@@ -32,6 +35,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    textAlign: "center", 
+    marginTop: "auto", 
+  },
+  notask:{
+    fontSize: 12,
+    fontWeight: "bold",
+    marginBottom: 10,
+    textAlign: "center", 
+    marginTop: "auto", 
   },
   taskItem: {
     flexDirection: "row",

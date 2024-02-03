@@ -31,7 +31,7 @@ const Tasks = () => {
         onChangeText={(text) => setNewTask(text)}
       />
       <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
-        <Text>Add</Text>
+        <Text>Add Task </Text>
       </TouchableOpacity>
 
       <FlatList
@@ -68,9 +68,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   addButton: {
-    backgroundColor: "blue",
     padding: 10,
+    borderWidth:2,
     alignItems: "center",
+    borderColor:"gray",
     borderRadius: 5,
     marginBottom: 10,
   },
