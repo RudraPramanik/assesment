@@ -11,6 +11,9 @@ import Tasks from "./app/screens/Tasks";
 import Settings from "./app/screens/Setings";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { UserContext } from "./UserContext";
+import { TaskProvider } from "./TaskContext";
+
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const InsideStack = createNativeStackNavigator();
@@ -24,6 +27,7 @@ function InsideLayout({ setUser, user }) {
   //   setTasks(newTasks);
   // };
   return (
+    <TaskProvider>
     <Drawer.Navigator
       initialRouteName="Home"
     >
@@ -31,6 +35,7 @@ function InsideLayout({ setUser, user }) {
       <Drawer.Screen name="Tasks" component={Tasks} />
       <Drawer.Screen name="Setings" component={Settings} initialParams={{ user }} />
     </Drawer.Navigator>
+    </TaskProvider>
  
   );
 }
@@ -49,7 +54,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login">
         {user ? (
           <Stack.Screen
-            name="Inside"
+            name="Assesment"
             component={InsideLayout}
             options={{ headerShown: true }}
           />
