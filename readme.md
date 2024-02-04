@@ -1,11 +1,11 @@
 First dwonload the repository.
 then go to root directory of the project and in terminal run:
 
- NPM install
+ npm install
 
  after installing all dependancy run:
 
- Npx expo start
+ npx expo start
 
  (Make sure you have node installed in your machine)
 
